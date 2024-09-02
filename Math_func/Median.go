@@ -1,13 +1,15 @@
 package Mathfunc
 
-import "math"
+import (
+	"math"
+)
 
-func Median(numbers []float64) int {
-	length := len(numbers) - 1
+func Median(numbers []float64) int64 {
+	length := len(numbers)
 	median := (numbers[(length/2)-1] + numbers[length/2]) / 2
 	if len(numbers)%2 == 0 {
-		return int(math.Round(median))
+		return int64(math.Round(median))
 	} else {
-		return int(math.Round(numbers[length/2]))
+		return int64(math.Round(numbers[length/2]))
 	}
 }

@@ -2,7 +2,7 @@ package Mathfunc
 
 import "math"
 
-func Variance(numbers []float64) int {
+func Variance(numbers []float64) (int64, float64) {
 	var res float64
 	var med float64
 	lenght := float64(len(numbers))
@@ -13,5 +13,5 @@ func Variance(numbers []float64) int {
 	for i := 0; i < len(numbers); i++ {
 		res += math.Pow((numbers[i] - med), 2)
 	}
-	return int(math.Round(res / (lenght)))
+	return int64(math.Round(res / (lenght))), res / (lenght)
 }
